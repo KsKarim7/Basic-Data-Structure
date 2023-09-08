@@ -25,15 +25,15 @@ void insert_tail(Node *&head, Node *&tail, int v)
     tail = newNode;
 }
 
-void print_mid_node(Node *head, int count)
+void print_mid_node(Node *head, int len)
 {
-    if (count % 2 == 0)
+    if (len % 2 == 0)
     {
-        int mid1 = count / 2;
+        int mid1 = len / 2;
     }
     else
     {
-        int mid1 = count / 2;
+        int mid1 = len / 2;
         int mid2 = mid1 + 1;
     }
     int counter = 0;
@@ -41,7 +41,24 @@ void print_mid_node(Node *head, int count)
     while (temp != NULL)
     {
         counter += 1;
-        // if()
+        if (len % 2 == 0)
+        {
+            int mid1 = len / 2;
+            int mid2 = mid1 + 1;
+            if (counter == mid1 || counter == mid2)
+            {
+                cout << temp->val << " ";
+            }
+        }
+        else
+        {
+            int mid1 = (len / 2) + 1;
+            if (counter == mid1)
+            {
+                cout << temp->val << endl;
+            }
+        }
+        temp = temp->next;
     }
 }
 
@@ -49,17 +66,17 @@ int main()
 {
     Node *head = NULL;
     Node *tail = NULL;
-    int val, count = 0;
+    int val, len = 0;
     while (true)
     {
         cin >> val;
-        count += 1;
         if (val == -1)
         {
             break;
         }
+        len++;
         insert_tail(head, tail, val);
     }
-    print_mid_node(head, count);
+    print_mid_node(head, len);
     return 0;
 }
