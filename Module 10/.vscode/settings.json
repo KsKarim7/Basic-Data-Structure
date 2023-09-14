@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "list": "cpp",
+        "ostream": "cpp",
+        "*.tcc": "cpp",
+        "deque": "cpp",
+        "forward_list": "cpp",
+        "string": "cpp",
+        "vector": "cpp",
+        "array": "cpp",
+        "regex": "cpp"
+    }
+}
