@@ -26,10 +26,51 @@ void insert_tail(Node *&head, Node *&tail, int val)
     tail = newNode;
 }
 
+// void delete_duplicates(Node *&head)
+// {
+//     Node *temp = head;
+//     while (temp->next != NULL || temp != NULL)
+//     {
+//         if (temp->val == temp->next->val)
+//         {
+//             temp->next = temp->next->next;
+//         }
+//         if (temp->next == NULL)
+//             break;
+//         else if (temp->val != temp->next->val)
+//         {
+//             temp = temp->next;
+//         }
+//     }
+// }
+
+void delete_duplicates(Node *&head)
+{
+    if (head == NULL || head->next == NULL)
+    {
+        return;
+    }
+
+    Node *temp = head;
+
+    while (temp != NULL && temp->next != NULL)
+    {
+        if (temp->val == temp->next->val)
+        {
+            Node *duplicate = temp->next;
+            temp->next = temp->next->next;
+            delete duplicate;
+        }
+        else
+        {
+            temp = temp->next;
+        }
+    }
+}
 void print_list(Node *head)
 {
     Node *temp = head;
-    while (head != NULL)
+    while (temp != NULL)
     {
         cout << temp->val << " ";
         temp = temp->next;
@@ -45,13 +86,25 @@ int main()
     while (true)
     {
         cin >> val;
-        while (val == -1)
+        if (val == -1)
         {
             break;
         }
         insert_tail(head, tail, val);
     }
-    // remove_duplicates(head,tail);
+
+    for (Node *i = head; i->next != NULL; i = i->next)
+    {
+        for (Node *j = i->next; j != NULL; j = j->next)
+        {
+            if (i->val > j->val)
+            {
+                swap(i->val, j->val);
+            }
+        }
+    }
+    delete_duplicates(head);
+
     print_list(head);
     return 0;
 }
