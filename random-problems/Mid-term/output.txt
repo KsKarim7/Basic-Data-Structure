@@ -1,0 +1,6 @@
+0 1 Invalid
+1 Invalid
+1 Invalid
+1 Invalid
+L -> 1 
+R -> 1 

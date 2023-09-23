@@ -1,2 +1,5 @@
-    print_list(head);
-    print_list(newHead);
+if (temp != NULL)
+    {
+        cout << "L ->"
+             << " ";
+    }
