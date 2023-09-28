@@ -50,10 +50,13 @@ void insert_at_position(Node *head, int pos, int val)
     {
         temp = temp->next;
     }
-    // cout << temp->val << endl;
+    // cout << temp->val << " " << newNode->next->prev << endl;
     newNode->next = temp->next;
     temp->next = newNode;
-    newNode->next->prev = newNode;
+    if (newNode->next != NULL)
+    {
+        newNode->next->prev = newNode;
+    }
     newNode->prev = temp;
 }
 
@@ -109,17 +112,17 @@ int main()
     Node *tail = NULL;
 
     int inp;
-    int val, idx;
+    int val, idx, count = 0;
     cin >> inp;
     for (int i = 0; i < inp; i++)
     {
-        cin >> val >> idx;
-        cout << size(head) << " ";
-        if (size(head) == 0)
+        cin >> idx >> val;
+        // cout << size(head) << " ";
+        if (idx == 0)
         {
             insert_head(head, tail, val);
         }
-        else if (idx >= size(head))
+        else if (idx > size(head))
         {
             cout << "Invalid" << endl;
         }
@@ -131,10 +134,12 @@ int main()
         {
             insert_at_position(head, idx, val);
         }
+        if (idx <= size(head))
+        {
+            print_straight(head);
+            print_reverse(tail);
+        }
     }
-
-    print_straight(head);
-    print_reverse(tail);
 
     return 0;
 }

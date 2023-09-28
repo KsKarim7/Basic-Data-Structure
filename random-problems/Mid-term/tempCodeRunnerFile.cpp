@@ -1,5 +1,2 @@
-if (temp != NULL)
-    {
-        cout << "L ->"
-             << " ";
-    }
+print_straight(head);
+            print_reverse(tail);
