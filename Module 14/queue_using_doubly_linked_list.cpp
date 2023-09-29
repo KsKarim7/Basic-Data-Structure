@@ -69,13 +69,6 @@ public:
 int main()
 {
     myQueue q;
-    // q.push(10);
-    // cout << q.front() << endl;
-    // q.push(20);
-    // cout << q.size() << endl;
-    // q.pop();
-    // q.push(20);
-    // q.pop();
     int n;
     cin >> n;
     for (int i = 0; i < n; i++)
