@@ -1,81 +1,112 @@
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// class myStack
+// {
+// public:
+//     vector<int> vec;
+//     void push(int val)
+//     {
+//         vec.push_back(val);
+//     }
+//     void pop()
+//     {
+//         vec.pop_back();
+//     }
+//     int top()
+//     {
+//         return vec.back();
+//     }
+//     int size()
+//     {
+//         return vec.size();
+//     }
+//     bool empty()
+//     {
+//         if (vec.size() == 0)
+//         {
+//             return true;
+//         }
+//         else
+//         {
+//             return false;
+//         }
+//     }
+// };
+
+// int main()
+// {
+//     myStack st, stt;
+//     int n;
+//     cin >> n;
+//     bool flag = true;
+//     for (int i = 0; i < n; i++)
+//     {
+//         int x;
+//         cin >> x;
+//         st.push(x);
+//     }
+//     cin >> n;
+//     for (int i = 0; i < n; i++)
+//     {
+//         int z;
+//         cin >> z;
+//         stt.push(z);
+//     }
+//     while (!st.empty())
+//     {
+//         if (st.size() != stt.size())
+//         {
+//             flag = false;
+//             break;
+//         }
+//         else if (st.top() != stt.top())
+//         {
+//             flag = false;
+//             break;
+//         }
+//         st.pop();
+//         stt.pop();
+//     }
+//     if (flag == true)
+//     {
+//         cout << "YES" << endl;
+//     }
+//     else
+//     {
+//         cout << "NO";
+//     }
+
+//     return 0;
+// }
+
+
+
+
+
 #include <bits/stdc++.h>
 using namespace std;
-
-class myStack
-{
-public:
-    vector<int> vec;
-    void push(int val)
-    {
-        vec.push_back(val);
-    }
-    void pop()
-    {
-        vec.pop_back();
-    }
-    int top()
-    {
-        return vec.back();
-    }
-    int size()
-    {
-        return vec.size();
-    }
-    bool empty()
-    {
-        if (vec.size() == 0)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-};
-
 int main()
 {
-    myStack st, stt;
+    stack<int>st;
+    queue<int>q;
     int n;
-    cin >> n;
-    bool flag = true;
-    for (int i = 0; i < n; i++)
-    {
+    cin>>n;
+    for(int i = 0;i<n;i++){
         int x;
-        cin >> x;
-        st.push(x);
+        cin>>x;
+        q.push(x);
     }
-    cin >> n;
-    for (int i = 0; i < n; i++)
-    {
-        int z;
-        cin >> z;
-        stt.push(z);
+    while(!q.empty()){
+        // cout<<st.top()<<" ";
+        st.push(q.front());
+        q.pop();
     }
-    while (!st.empty())
-    {
-        if (st.size() != stt.size())
-        {
-            flag = false;
-            break;
-        }
-        else if (st.top() != stt.top())
-        {
-            flag = false;
-            break;
-        }
+    while(!st.empty()){
+        cout<<st.top()<<" ";
         st.pop();
-        stt.pop();
     }
-    if (flag == true)
-    {
-        cout << "YES" << endl;
-    }
-    else
-    {
-        cout << "NO";
-    }
-
+   
     return 0;
 }
+    
