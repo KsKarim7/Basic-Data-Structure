@@ -1,9 +1,31 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+class myQueue
+{
+public:
+    list<string> l;
+    void push(string val)
+    {
+        l.push_back(val);
+    }
+    void pop()
+    {
+        l.pop_front();
+    }
+    // int front()
+    // {
+    //     return l.begin();
+    // }
+    bool empty()
+    {
+        return l.empty();
+    }
+};
+
 int main()
 {
-    queue<string> q;
+    myQueue q;
     int n;
     cin >> n;
     for (int i = 0; i < n; i++)
@@ -18,12 +40,11 @@ int main()
         }
         else if (q.empty())
         {
-            cout << "Invalid" << endl;
+            cout << "Invalid";
         }
         else
         {
-            // cout << 's';
-            cout << q.front() << endl;
+            // q.front();
             q.pop();
         }
     }
