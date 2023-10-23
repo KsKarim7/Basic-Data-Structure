@@ -1,6 +1,11 @@
-5
-0 rahim
-0 karim
-1
-0 sakib
-1
+10
+AABB
+BABA
+BBAA
+ABAB
+AAAB
+ABBB
+ABBA
+BAABAB
+BBBAABA
+AAABABBABB
