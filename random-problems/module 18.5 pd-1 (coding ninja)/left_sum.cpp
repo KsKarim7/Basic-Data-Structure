@@ -18,20 +18,27 @@
 
 // vector<int>v;
 
-// int left_sum(BinaryTreeNode<int> *root){
-// 	int lsum = 0;
-//     if(root == NULL){
-//         return 0;
+// void left_sum(BinaryTreeNode<int> *root,int n,int &lsum){
+// 	// int lsum = 0;
+//     if(root != NULL && n==1){
+//         lsum += root->data;
 //     }
-// 	lsum += root->data;
-// 	left_sum(root->left);
-// 	return lsum;
+// 	else if(root == NULL){
+// 		return;
+// 	}
+// 	left_sum(root->left,1,lsum);
+// 	left_sum(root->right,0,lsum);
+// 	// return lsum;
+
 // }
 
 // long long leftSum(BinaryTreeNode<int> *root)
 // {
 // 	// Write your code here.
 // 	v.clear();
-// 	cout<<left_sum(root)<<endl;
+// 	int n = 0;
+// 	int lsum = 0;
+// 	left_sum(root,n,lsum);
+// 	return lsum;
 
 // }
