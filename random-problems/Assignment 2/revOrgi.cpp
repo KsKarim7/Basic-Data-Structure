@@ -13,26 +13,36 @@ public:
     }
 };
 
-void func(Node *n)
-{
-    if (n == NULL)
-    {
-        return;
-    }
-    func(n->next);
-    cout << n->val << " ";
-}
-
-void ins_tail(Node *&head, Node *&tail, int val)
+void insert_list(Node *&head, Node *&tail, int val)
 {
     Node *newNode = new Node(val);
     if (head == NULL)
     {
         head = newNode;
         tail = newNode;
+        return;
     }
     tail->next = newNode;
     tail = newNode;
+}
+
+void print_list(Node *head)
+{
+    cout << endl;
+    Node *temp = head;
+    while (temp != NULL)
+    {
+        cout << temp->val << " ";
+        temp = temp->next;
+    }
+}
+
+void print_recursion(Node *head)
+{
+    if (head == NULL)
+        return;
+    print_recursion(head->next);
+    cout << head->val << " ";
 }
 
 int main()
@@ -47,8 +57,9 @@ int main()
         {
             break;
         }
-        ins_tail(head, tail, val);
+        insert_list(head, tail, val);
     }
-    func(head);
+    print_recursion(head);
+    print_list(head);
     return 0;
 }

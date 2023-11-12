@@ -35,7 +35,7 @@ void if_ascending(Node *head)
     Node *temp = head;
     while (temp != NULL)
     {
-        if (temp->val > temp->next->val)
+        if (temp != NULL && temp->next != NULL)
         {
             flag = false;
             break;

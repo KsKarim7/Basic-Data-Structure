@@ -37,13 +37,14 @@ void print_reverse(Node *tail)
     cout << endl;
 }
 
-void insert_list(Node *&tail, Node *&head, int val)
+void insert_tail(Node *&head, Node *&tail, int val)
 {
     Node *newNode = new Node(val);
     if (tail == NULL)
     {
         head = newNode;
         tail = newNode;
+        return;
     }
     tail->next = newNode;
     newNode->prev = tail;
@@ -61,7 +62,7 @@ int main()
         cin >> val;
         if (val == -1)
             break;
-        insert_list(head, tail, val);
+        insert_tail(head, tail, val);
     }
     print_list(head);
     print_reverse(tail);

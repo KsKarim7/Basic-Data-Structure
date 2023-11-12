@@ -43,9 +43,9 @@ int main()
         cout << q.front() << endl;
         q.pop();
     }
-    if (!q.empty())
-    {
-        cout << q.front(); // should apply this condition otherwise you are gonna get segmentation fault in other editors.
-    }
+    // if (!q.empty())
+    // {
+    //     cout << q.front(); // should apply this condition otherwise you are gonna get segmentation fault in other editors.
+    // }
     return 0;
 }

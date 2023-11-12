@@ -11,6 +11,6 @@ int main()
     int val = 10;
     int *pointer = &val;
     func(pointer);
-    cout << *pointer << endl;
+    cout << val << endl;
     return 0;
 }

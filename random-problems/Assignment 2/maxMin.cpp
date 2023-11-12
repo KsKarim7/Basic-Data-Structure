@@ -12,7 +12,8 @@ public:
         this->next = NULL;
     }
 };
-void insert_tail(Node *&head, Node *&tail, int val)
+
+void ins_tail(Node *&head, Node *&tail, int val)
 {
     Node *newNode = new Node(val);
     if (head == NULL)
@@ -24,16 +25,26 @@ void insert_tail(Node *&head, Node *&tail, int val)
     tail->next = newNode;
     tail = newNode;
 }
-void print_linked_list(Node *head)
+
+
+void print_maxMin(Node *head)
 {
     Node *temp = head;
-    cout << temp->val << " ";
+    int min = INT_MAX;
+    int max = INT_MIN;
     while (temp != NULL)
     {
+        if (temp->val < min)
+        {
+            min = temp->val;
+        }
+        if (temp->val > max)
+        {
+            max = temp->val;
+        }
         temp = temp->next;
     }
-    cout << temp->val << " ";
-    cout << endl;
+    cout << max << " " << min << endl;
 }
 
 int main()
@@ -48,8 +59,10 @@ int main()
         {
             break;
         }
-        insert_tail(head, tail, val);
+        ins_tail(head, tail, val);
     }
-    print_linked_list(head);
+    print_maxMin(head);
+    // print_linked_list(head);
+
     return 0;
 }
