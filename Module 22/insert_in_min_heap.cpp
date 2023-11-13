@@ -14,7 +14,7 @@ int main()
         while (current_idx != 0)
         {
             int parent_idx = (current_idx - 1) / 2;
-            if (v[parent_idx] < v[current_idx])
+            if (v[parent_idx] > v[current_idx])
             {
                 swap(v[parent_idx], v[current_idx]);
             }
