@@ -1,30 +1,4 @@
-        int q;
-        cin >> q;
-        if (q == 0)
+        for (auto it = mp.begin(); it != mp.end(); it++)
         {
-            int x;
-            cin >> x;
-            l.push_back(x);
-            l.sort();
-        }
-        else if (l.empty())
-        {
-            cout << "Empty" << endl;
-        }
-        else if (q == 1)
-        {
-            cout << l.front() << endl;
-        }
-        else if (q == 2)
-        {
-            l.pop_front();
-            if (l.empty())
-            {
-                cout << "Empty" << endl;
-            }
-            else
-            {
-
-                cout << l.front() << endl;
-            }
+            cout << it->first << " " << it->second << endl;
         }
